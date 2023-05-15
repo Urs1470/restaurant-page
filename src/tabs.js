@@ -4,11 +4,13 @@ import createRestaurantHomePage from "./restaurant";
 
 const createTabs = () => {
   const content = document.querySelector("#content");
+  const navBar = document.createElement("div");
+  navBar.setAttribute("id", "navbar");
 
   // Create the three divs
-  const div1 = document.createElement("div");
-  const div2 = document.createElement("div");
-  const div3 = document.createElement("div");
+  const div1 = document.createElement("button");
+  const div2 = document.createElement("button");
+  const div3 = document.createElement("button");
 
   // Set ids for the tabs
   div1.setAttribute("id", "home-btn");
@@ -26,9 +28,10 @@ const createTabs = () => {
   div3.textContent = "Contact";
 
   // Append the divs to the content div
-  content.appendChild(div1);
-  content.appendChild(div2);
-  content.appendChild(div3);
+  navBar.appendChild(div1);
+  navBar.appendChild(div2);
+  navBar.appendChild(div3);
+  content.appendChild(navBar);
 
   // Add event listeners for tabs
   div1.addEventListener("click", () => {
